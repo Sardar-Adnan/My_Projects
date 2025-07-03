@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Car Rental Service</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #1abc9c;
+            --text-color: #333;
+            --bg-gradient-start: #e3f2fd;
+            --bg-gradient-end: #f9fbe7;
+            --content-bg: #ffffff;
+            --highlight-color: #e67e22;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, var(--bg-gradient-start), var(--bg-gradient-end));
+            color: var(--text-color);
+        }
+
+        header {
+            background: var(--primary-color);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav {
+            background: var(--secondary-color);
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            padding: 10px 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.3s ease, background-color 0.3s ease;
+        }
+
+        nav ul li a:hover, nav ul li a.active {
+            background: var(--accent-color);
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+
+        .container {
+            background: var(--content-bg);
+            padding: 40px;
+            text-align: center;
+            margin: 20px auto;
+            max-width: 900px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .highlight {
+            color: var(--highlight-color);
+            font-weight: bold;
+        }
+
+        .section {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        footer {
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            width: 100%;
+            position: relative;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav ul li {
+                padding: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        About Us 
+    </header>
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="car-list.html">Car List</a></li>
+            <li><a href="booking.html">Booking</a></li>
+            <li><a href="about.html" class="active">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <section class="container">
+        <h2>Who We Are</h2>
+        <p>Welcome to <span class="highlight">Car Rental Service</span>, your trusted partner in hassle-free and affordable vehicle rentals.</p>
+        
+        <div class="section">
+            <h3>Our Mission</h3>
+            <p>We are committed to delivering a seamless, safe, and cost-effective car rental experience.</p>
+        </div>
+
+        <div class="section">
+            <h3>Why Choose Us?</h3>
+            <table>
+                <tr>
+                    <th>Feature</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td><strong>Affordable Pricing</strong></td>
+                    <td>Competitive rates with no hidden charges.</td>
+                </tr>
+                <tr>
+                    <td><strong>Wide Selection</strong></td>
+                    <td>Choose from economy cars, luxury sedans, SUVs, and more.</td>
+                </tr>
+                <tr>
+                    <td><strong>Easy Booking Process</strong></td>
+                    <td>Simple online booking and hassle-free pick-up/drop-off.</td>
+                </tr>
+                <tr>
+                    <td><strong>Reliable Customer Support</strong></td>
+                    <td>Our team is available 24/7 to assist you.</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <h3>Our Commitment</h3>
+            <p>At <span class="highlight">Car Rental Service</span>, we prioritize safety, convenience, and customer satisfaction.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Car Rental Service. All rights reserved.</p>
+        <p><a href="terms.html" style="color: white; text-decoration: underline;">Terms & Policy</a></p>
+    </footer>
+</body>
+</html>

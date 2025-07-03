@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rental Service</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50; 
+            --secondary-color: #34495e; 
+            --accent-color: #1abc9c; 
+            --text-color: #333; 
+            --bg-gradient-start: #e3f2fd; 
+            --bg-gradient-end: #f9fbe7; 
+            --content-bg: #ffffff; 
+            --highlight-color: #e67e22; 
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+        }
+
+        .header {
+            background: var(--primary-color);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            flex-direction: row;
+        }
+
+        .nav-container {
+            background: var(--secondary-color);
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+
+        .nav-container ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .nav-container ul li {
+            padding: 10px 20px;
+        }
+
+        .nav-container ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.3s ease, background-color 0.3s ease;
+        }
+
+        .nav-container ul li a:hover, .nav-container ul li a.active {
+            background: var(--accent-color);
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+
+        .main-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1000px; /* Increased to accommodate both containers */
+    margin: 20px auto;
+    padding: 0 20px;
+    gap: 30px; /* Space between containers */
+}
+
+        .container {
+    background: var(--content-bg);
+    padding: 30px;
+    width: 45%; /* Takes 45% of parent width */
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Align text to left as in screenshot */
+    margin: 0; /* Remove auto margin */
+}
+
+        .highlight {
+            color: var(--highlight-color);
+            font-weight: bold;
+        }
+
+        .footer {
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            width: 100%;
+            position: relative;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        /* Carousel Styles */
+        .carousel-container {
+    width: 50%; /* Takes 50% of parent width */
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 0; /* Remove auto margin */
+}
+
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .carousel-controls {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+
+        .carousel-btn {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+
+        .carousel-btn:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #ccc;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .indicator.active {
+            background-color: var(--accent-color);
+
+        }
+        @media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+    }
+    .container, .carousel-container {
+        width: 100%;
+    }
+    .carousel-container {
+                max-width: 100%;
+                border-radius: 0;
+            }
+
+    .nav-container ul li {
+                padding: 8px 12px;
+            }
+}
+
+        
+    </style>
+</head>
+<body>
+    <div class="header">
+        Car Rental Service
+    </div>
+
+    <div class="nav-container">
+        <ul>
+            <li><a href="home.html" class="active">Home</a></li>
+            <li><a href="car-list.html">Car List</a></li>
+            <li><a href="booking.html">Booking</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content" >
+        <div class="container">
+        <h2>Welcome to Our Car Rental Service</h2>
+        <p>Explore <span class="highlight">top-quality vehicles</span> with competitive rates and an easy booking process.</p>
+        </div>
+        <!-- Image Carousel -->
+        <div class="carousel-container">
+            <div class="carousel">
+                <img src="C:\Users\Acer\OneDrive\Desktop\MBSC.jpg" alt="Mercedes-Benz S-Class">
+                <img src="C:\Users\Acer\OneDrive\Desktop\BMW7.jpg" alt="BMW 7 Series">
+                <img src="C:\Users\Acer\OneDrive\Desktop\AA8.jpg" alt="Audi A8">
+                <img src="C:\Users\Acer\OneDrive\Desktop\LLS.jpg" alt="Lexus LS 500">
+            </div>
+            <div class="carousel-controls">
+                <button class="carousel-btn" id="prevBtn">Previous</button>
+                <button class="carousel-btn" id="playPauseBtn">Pause</button>
+                <button class="carousel-btn" id="nextBtn">Next</button>
+            </div>
+            <div class="carousel-indicators">
+                <div class="indicator active" data-index="0"></div>
+                <div class="indicator" data-index="1"></div>
+                <div class="indicator" data-index="2"></div>
+                <div class="indicator" data-index="3"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2025 Car Rental Service. All rights reserved.</p>
+        <p><a href="terms.html">Terms & Policy</a></p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const carousel = document.querySelector('.carousel');
+            const images = document.querySelectorAll('.carousel img');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const playPauseBtn = document.getElementById('playPauseBtn');
+            const indicators = document.querySelectorAll('.indicator');
+            
+            let currentIndex = 0;
+            let intervalId = null;
+            let isPlaying = true;
+            const slideInterval = 3000; // 3 seconds
+            
+            // Set initial position
+            updateCarousel();
+            
+            // Start auto-play
+            startCarousel();
+            
+            // Event listeners
+            prevBtn.addEventListener('click', prevSlide);
+            nextBtn.addEventListener('click', nextSlide);
+            playPauseBtn.addEventListener('click', togglePlayPause);
+            
+            indicators.forEach(indicator => {
+                indicator.addEventListener('click', function() {
+                    currentIndex = parseInt(this.getAttribute('data-index'));
+                    updateCarousel();
+                    resetInterval();
+                });
+            });
+            
+            // Functions
+            function startCarousel() {
+                if (!intervalId) {
+                    intervalId = setInterval(nextSlide, slideInterval);
+                }
+            }
+            
+            function stopCarousel() {
+                clearInterval(intervalId);
+                intervalId = null;
+            }
+            
+            function resetInterval() {
+                if (isPlaying) {
+                    stopCarousel();
+                    startCarousel();
+                }
+            }
+            
+            function togglePlayPause() {
+                if (isPlaying) {
+                    stopCarousel();
+                    playPauseBtn.textContent = 'Play';
+                    isPlaying = false;
+                } else {
+                    startCarousel();
+                    playPauseBtn.textContent = 'Pause';
+                    isPlaying = true;
+                }
+            }
+            
+            function prevSlide() {
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                updateCarousel();
+                resetInterval();
+            }
+            
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % images.length;
+                updateCarousel();
+            }
+            
+            function updateCarousel() {
+                const offset = -currentIndex * 100;
+                carousel.style.transform = `translateX(${offset}%)`;
+                
+                // Update indicators
+                indicators.forEach((indicator, index) => {
+                    if (index === currentIndex) {
+                        indicator.classList.add('active');
+                    } else {
+                        indicator.classList.remove('active');
+                    }
+                });
+            }
+            
+           
+            carousel.addEventListener('mouseenter', function() {
+                if (isPlaying) {
+                    stopCarousel();
+                    playPauseBtn.textContent = 'Play';
+                }
+            });
+            
+            carousel.addEventListener('mouseleave', function() {
+                if (isPlaying) {
+                    startCarousel();
+                    playPauseBtn.textContent = 'Pause';
+                }
+            });
+            
+            
+            window.addEventListener('resize', function() {
+                updateCarousel();
+            });
+        });
+    </script>
+</body>
+</html>
