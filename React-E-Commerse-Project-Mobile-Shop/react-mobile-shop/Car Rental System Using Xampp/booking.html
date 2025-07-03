@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Booking</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #1abc9c;
+            --text-color: #333;
+            --bg-gradient-start: #e3f2fd;
+            --bg-gradient-end: #f9fbe7;
+            --content-bg: #ffffff;
+            --highlight-color: #e67e22;
+            --error-color: #e74c3c;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, var(--bg-gradient-start), var(--bg-gradient-end));
+            color: var(--text-color);
+        }
+
+        header {
+            background: var(--primary-color);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav {
+            background: var(--secondary-color);
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            padding: 10px 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.3s ease, background-color 0.3s ease;
+        }
+
+        nav ul li a:hover, nav ul li a.active {
+            background: var(--accent-color);
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+
+        .container {
+            background: var(--content-bg);
+            padding: 40px;
+            text-align: center;
+            margin: 20px auto;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            margin-bottom: 20px;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background: var(--secondary-color);
+            color: white;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 5px rgba(26, 188, 156, 0.5);
+        }
+
+        button {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #16a085;
+        }
+
+        .error {
+            color: var(--error-color);
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .error.show {
+            display: block;
+        }
+
+        input.error-field, select.error-field {
+            border-color: var(--error-color);
+        }
+
+        footer {
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            width: 100%;
+            position: relative;
+        }
+
+        .success-message {
+            display: none;
+            background-color: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>Car Rental Service</header>
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="car-list.html">Car List</a></li>
+            <li><a href="booking.html" class="active">Booking</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div id="successMessage" class="success-message">
+            Booking submitted successfully! We'll contact you shortly.
+        </div>
+
+        <h2>Book Your Car</h2>
+        <form id="bookingForm" action="process_booking.php" method="POST">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Your Full Name">
+                <div id="nameError" class="error">Please enter your full name (at least 3 characters and no numbers allowed)</div>
+                
+            </div>
+
+            <div class="form-group">
+                <label for="contact">Contact Number</label>
+                <input type="text" id="contact" name="contact" placeholder="Contact Number">
+                <div id="contactError" class="error">Please enter a valid phone number (10-15 digits)</div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Email Address">
+                <div id="emailError" class="error">Please enter a valid email address</div>
+            </div>
+
+            <div class="form-group">
+                <label for="car">Select Car</label>
+                <select id="car" name="car">
+                    <option value="">-- Select a Car --</option>
+                    <option value="Suzuki Alto">Suzuki Alto (Economy)</option>
+                    <option value="Toyota Vitz">Toyota Vitz (Economy)</option>
+                    <option value="Honda Fit">Honda Fit (Economy)</option>
+                    <option value="Hyundai i10">Hyundai i10 (Economy)</option>
+                    <option value="Toyota Corolla">Toyota Corolla (sedan)</option>
+                    <option value="Honda Civic">Honda Civic (Sedan)</option>
+                    <option value="Volkswagen Passat">Volkswagen Passat (Sedan)</option>
+                    <option value="Hyundai Sonata">Hyundai Sonata (Sedan)</option>
+                    <option value="Mercedes-Benz S-Class">Mercedes-Benz S-Class (Luxury)</option>
+                    <option value="BMW 7 Series">BMW 7 Series (Luxury)</option>
+                    <option value="Audi A8">Audi A8 (Luxury)</option>
+                    <option value="Lexus LS 500">Lexus LS 500 (Luxury)</option>
+                    <option value="Toyota Land Cruiser">Toyota Land Cruiser (SUV)</option>
+                    <option value="Honda CR-V">Honda CR-V (SUV)</option>
+                    <option value="Hyundai Tucson">Hyundai Tucson (SUV)</option>
+                    <option value="Ford Everest">Ford Everest (SUV)</option>
+                </select>
+                <div id="carError" class="error">Please select a car</div>
+            </div>
+
+            <div class="form-group">
+                <label for="pickupDate">Pickup Date</label>
+                <input type="date" id="pickupDate" name="pickupDate">
+                <div id="pickupDateError" class="error">Please select a valid pickup date</div>
+            </div>
+
+            <div class="form-group">
+                <label for="returnDate">Return Date</label>
+                <input type="date" id="returnDate" name="returnDate">
+                <div id="returnDateError" class="error">Please select a valid return date</div>
+            </div>
+
+            <div class="form-group">
+                <label for="payment">Payment Method</label>
+                <select id="payment" name="payment">
+                    <option value="">-- Select Payment Method --</option>
+                    <option value="Credit Card">Credit Card</option>
+                    <option value="Bank Transfer">Bank Transfer</option>
+                    <option value="Cash on Pickup">Cash on Pickup</option>
+                </select>
+                <div id="paymentError" class="error">Please select a payment method</div>
+            </div>
+
+            
+
+            <button type="submit" id="submitBtn">Book Now</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Car Rental Service. All rights reserved.</p>
+        <p><a href="terms.html" style="color: white; text-decoration: underline;">Terms & Policy</a></p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('bookingForm');
+            const successMessage = document.getElementById('successMessage');
+            
+           
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('pickupDate').min = today;
+            
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+               
+    
+    if (validateForm()) {
+        
+        form.submit();
+    }
+});
+            
+            
+            document.getElementById('name').addEventListener('input', validateName);
+            document.getElementById('contact').addEventListener('input', validateContact);
+            document.getElementById('email').addEventListener('input', validateEmail);
+            document.getElementById('car').addEventListener('change', validateCar);
+            document.getElementById('pickupDate').addEventListener('change', validatePickupDate);
+            document.getElementById('returnDate').addEventListener('change', validateReturnDate);
+            document.getElementById('payment').addEventListener('change', validatePayment);
+            
+           
+            function validateForm() {
+                const isNameValid = validateName();
+                const isContactValid = validateContact();
+                const isEmailValid = validateEmail();
+                const isCarValid = validateCar();
+                const isPickupDateValid = validatePickupDate();
+                const isReturnDateValid = validateReturnDate();
+                const isPaymentValid = validatePayment();
+                
+                return isNameValid && isContactValid && isEmailValid && 
+                       isCarValid && isPickupDateValid && isReturnDateValid && 
+                       isPaymentValid;
+            }
+            
+            function validateName() {
+                const name = document.getElementById('name').value.trim();
+                const errorElement = document.getElementById('nameError');
+                const errorElement1 = document.getElementById('numerror');
+                const nameRegex = /^[A-Za-z\s'-]+$/;
+                
+                if (name.length < 3) {
+                    showError('name', errorElement);
+                    return false;
+                } 
+                else if (/\d/.test(name)) {
+        showError('name', errorElement1, 'Numbers are not allowed in names');
+        return false;
+                 }
+    else {
+                    clearError('name', errorElement,errorElement1);
+                    return true;
+                }
+            }
+            
+            function validateContact() {
+                const contact = document.getElementById('contact').value.trim();
+                const errorElement = document.getElementById('contactError');
+                const phoneRegex = /^[0-9]{11}$/;
+                
+                if (!phoneRegex.test(contact)) {
+                    showError('contact', errorElement);
+                    return false;
+                } else {
+                    clearError('contact', errorElement);
+                    return true;
+                }
+            }
+            
+            function validateEmail() {
+                const email = document.getElementById('email').value.trim();
+                const errorElement = document.getElementById('emailError');
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                
+                if (!emailRegex.test(email)) {
+                    showError('email', errorElement);
+                    return false;
+                } else {
+                    clearError('email', errorElement);
+                    return true;
+                }
+            }
+            
+            function validateCar() {
+                const car = document.getElementById('car').value;
+                const errorElement = document.getElementById('carError');
+                
+                if (!car) {
+                    showError('car', errorElement);
+                    return false;
+                } else {
+                    clearError('car', errorElement);
+                    return true;
+                }
+            }
+            
+            function validatePickupDate() {
+                const pickupDate = document.getElementById('pickupDate').value;
+                const errorElement = document.getElementById('pickupDateError');
+                
+                if (!pickupDate) {
+                    showError('pickupDate', errorElement);
+                    return false;
+                } else {
+                    clearError('pickupDate', errorElement);
+                    return true;
+                }
+            }
+            
+            function validateReturnDate() {
+                const returnDate = document.getElementById('returnDate').value;
+                const pickupDate = document.getElementById('pickupDate').value;
+                const errorElement = document.getElementById('returnDateError');
+                
+                if (!returnDate) {
+                    showError('returnDate', errorElement);
+                    return false;
+                } else if (pickupDate && new Date(returnDate) < new Date(pickupDate)) {
+                    errorElement.textContent = 'Return date must be after pickup date';
+                    showError('returnDate', errorElement);
+                    return false;
+                } else {
+                    clearError('returnDate', errorElement);
+                    return true;
+                }
+            }
+            
+            function validatePayment() {
+                const payment = document.getElementById('payment').value;
+                const errorElement = document.getElementById('paymentError');
+                
+                if (!payment) {
+                    showError('payment', errorElement);
+                    return false;
+                } else {
+                    clearError('payment', errorElement);
+                    return true;
+                }
+            }
+            
+            function showError(fieldId, errorElement) {
+                document.getElementById(fieldId).classList.add('error-field');
+                errorElement.classList.add('show');
+            }
+            
+            function clearError(fieldId, errorElement) {
+                document.getElementById(fieldId).classList.remove('error-field');
+                errorElement.classList.remove('show');
+            }
+            
+           
+            document.getElementById('pickupDate').addEventListener('change', function() {
+                const pickupDate = this.value;
+                if (pickupDate) {
+                    document.getElementById('returnDate').min = pickupDate;
+                    
+                    
+                    const returnDate = document.getElementById('returnDate').value;
+                    if (returnDate && new Date(returnDate) < new Date(pickupDate)) {
+                        document.getElementById('returnDate').value = '';
+                        validateReturnDate();
+                    }
+                }
+         
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rental Service</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #e3f2fd, #f9fbe7);
+        }
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        nav {
+            background: #34495e;
+            text-align: center;
+            padding: 10px 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background 0.3s ease-in-out;
+        }
+        nav ul li a:hover, nav ul li .active {
+            background: #1abc9c;
+            color: white;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background: #2c3e50;
+            color: white;
+        }
+        img {
+            width: 150px;
+            height: auto;
+            border-radius: 5px;
+        }
+        .price {
+            font-size: 16px;
+            color: #e67e22;
+            font-weight: bold;
+        }
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Car Rental Service
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="home.html" class="active">Home</a></li>
+            <li><a href="car-list.html">Car List</a></li>
+            <li><a href="booking.html">Booking</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2>Luxury Cars Available for Rent</h2>
+        <table>
+            <tr>
+                <th>Image</th>
+                <th>Car Model</th>
+                <th>Description</th>
+                <th>Price</th>
+            </tr>
+            <tr>
+                <td><img src="C:\Users\Acer\OneDrive\Desktop\MBSC.jpg" alt="Mercedes-Benz S-Class"></td>
+                <td>Mercedes-Benz S-Class</td>
+                <td>The epitome of luxury and comfort for VIP travels.</td>
+                <td class="price">₨ 15,000/day</td>
+            </tr>
+            <tr>
+                <td><img src="C:\Users\Acer\OneDrive\Desktop\BMW7.jpg" alt="BMW 7 Series"></td>
+                <td>BMW 7 Series</td>
+                <td>Combines high performance with cutting-edge technology.</td>
+                <td class="price">₨ 17,500/day</td>
+            </tr>
+            <tr>
+                <td><img src="C:\Users\Acer\OneDrive\Desktop\AA8.jpg" alt="Audi A8"></td>
+                <td>Audi A8</td>
+                <td>Premium experience with state-of-the-art technology.</td>
+                <td class="price">₨ 16,000/day</td>
+            </tr>
+            <tr>
+                <td><img src="C:\Users\Acer\OneDrive\Desktop\LLS.jpg" alt="Lexus LS 500"></td>
+                <td>Lexus LS 500</td>
+                <td>A sleek design with unmatched smooth performance.</td>
+                <td class="price">₨ 18,000/day</td>
+            </tr>
+        </table>
+    </div>
+
+    <footer>
+        &copy; 2025 Car Rental Service. All rights reserved.
+    </footer>
+</body>
+</html>

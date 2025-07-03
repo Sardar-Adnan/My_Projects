@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Car Rental Service</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #1abc9c;
+            --text-color: #333;
+            --bg-gradient-start: #e3f2fd;
+            --bg-gradient-end: #f9fbe7;
+            --content-bg: #ffffff;
+            --highlight-color: #e67e22;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, var(--bg-gradient-start), var(--bg-gradient-end));
+            color: var(--text-color);
+        }
+
+        .header {
+            background: var(--primary-color);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-container {
+            background: var(--secondary-color);
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+
+        .nav-container ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        .nav-container ul li {
+            padding: 10px 20px;
+        }
+
+       
+
+        .nav-container ul li a:hover, .nav-container ul li a.active {
+            background: var(--accent-color);
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: var(--content-bg);
+            padding: 40px;
+            text-align: center;
+            margin: 20px auto;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-info {
+            margin-bottom: 20px;
+        }
+
+        .contact-form {
+            width: 100%;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact-form button {
+            background: var(--accent-color);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        .contact-form button:hover {
+            background: var(--highlight-color);
+        }
+
+        .footer {
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            width: 100%;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+            }
+            .nav-container ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            .nav-container ul li {
+                padding: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        Car Rental Service
+    </div>
+
+    <div class="nav-container">
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="car-list.html">Car List</a></li>
+            <li><a href="booking.html">Booking</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html" class="active">Contact Us</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <div class="contact-info">
+            <h2>Contact Us</h2>
+            <p>If you have any questions, feel free to reach out to us. We are here to help!</p>
+            <p><strong>Address:</strong> CUI Attock</p>
+            <p><strong>Email:</strong> fa22-bse-021@cuiatk.edu.pk</p>
+            <p><strong>Phone:</strong> +92 112233445</p>
+        </div>
+
+        <div class="form-container">
+            <h3>Send Us a Message</h3>
+            <form class="contact-form">
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                <textarea id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2025 Car Rental Service. All rights reserved.</p>
+        <p><a href="terms.html">Terms & Policy</a></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sedan Cars - Car Rental Service</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #e3f2fd, #f9fbe7);
+            color: #333;
+        }
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 22px;
+        }
+        nav {
+            background: #34495e;
+            padding: 10px 0;
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            transition: 0.3s;
+            border-radius: 5px;
+        }
+        nav ul li a:hover, nav ul li a.active {
+            background: #1abc9c;
+            color: white;
+        }
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 30px auto;
+            text-align: center;
+        }
+        .container h2 {
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background: #2c3e50;
+            color: white;
+        }
+        img {
+            width: 120px;
+            height: auto;
+            border-radius: 5px;
+        }
+        .price {
+            font-size: 18px;
+            color: #e67e22;
+            font-weight: bold;
+        }
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+            nav ul li {
+                margin: 10px 0;
+            }
+            table {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Car Rental Service</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="car-list.html" class="active">Car List</a></li>
+            <li><a href="booking.html">Booking</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2>Sedan Cars Available for Rent</h2>
+        <table>
+            <tr>
+                <th>Image</th>
+                <th>Car Name</th>
+                <th>Description</th>
+                <th>Price</th>
+            </tr>
+            <tr>
+                <td><img src="C:\Users\Acer\OneDrive\Desktop\TC.jpg" alt="Toyota Corolla"></td>
+                <td>Toyota Corolla</td>
+                <td>Economical and fuel-efficient, perfect for daily commutes.</td>
+                <td class="price">₨ 4,000/day</td>
+            </tr>
+            <tr>
+                <td><img src="C:\Users\Acer\OneDrive\Desktop\HC.jpg" alt="Honda Civic"></td>
+                <td>Honda Civic</td>
+                <td>Sporty and comfortable, suitable for both city and highway driving.</td>
+                <td class="price">₨ 6,500/day</td>
+            </tr>
+            <tr>
+                <td><img src="C:\Users\Acer\OneDrive\Desktop\HSO.jpg" alt="Hyundai Sonata"></td>
+                <td>Hyundai Sonata</td>
+                <td>Modern design with high-tech features for a smooth ride.</td>
+                <td class="price">₨ 8,000/day</td>
+            </tr>
+            <tr>
+                <td><img src="C:\Users\Acer\OneDrive\Desktop\VP.jpg" alt="Volkswagen Passat"></td>
+                <td>Volkswagen Passat</td>
+                <td>A balance of luxury and performance, great for business trips.</td>
+                <td class="price">₨ 9,000/day</td>
+            </tr>
+        </table>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Car Rental Service. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
